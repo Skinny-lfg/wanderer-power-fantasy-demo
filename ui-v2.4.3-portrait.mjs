@@ -128,7 +128,7 @@ function positionMob(card,e){
   const viewport=mobile?'mobile':'desktop',destination={x,y};
   if(m.viewport!==viewport||!m.entryPosition||!m.currentPosition){
     m.viewport=viewport;m.destination={...destination};
-    m.entryPosition=mobile?{x:destination.x,y:-10}:{x:108,y:y-1.5};
+    m.entryPosition=mobile?{x:destination.x,y:12}:{x:108,y:y-1.5};
     m.currentPosition=m.state==='entering'?{...m.entryPosition}:{...destination};
   }else m.destination={...destination};
   let current=destination;
