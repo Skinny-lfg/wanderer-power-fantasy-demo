@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 6199)
-Total output lines: 208
-
 import {createRun,tick,choose,setTargetFocus,ENCOUNTERS,UPGRADES} from './engine-v2.6.mjs';
 
 const app=document.querySelector('#app');
@@ -108,7 +105,14 @@ function drawBoltPoints(arena,x,y,x2,y2,kind){
   const line=document.createElement('span');line.className='bolt '+kind;line.style.cssText=`left:${x}px;top:${y}px;width:${Math.hypot(x2-x,y2-y)}px;transform:rotate(${Math.atan2(y2-y,x2-x)}rad)`;arena.append(line);setTimeout(()=>line.remove(),360);
 }
 function preserveDeathVisual(id){
-  const card=document.querySelector(`#…199 tokens truncated…nst field=document.querySelector('#mobField');if(!field)return null;
+  const card=document.querySelector(`#mobField [data-enemy="${id}"]`),arena=document.querySelector('#arena'),layer=document.querySelector('#deathLayer');if(!card||!arena||!layer)return;
+  const rect=card.getBoundingClientRect(),bounds=arena.getBoundingClientRect(),echo=card.cloneNode(true);
+  echo.className=`mob deathEcho${card.classList.contains('elite')?' elite':''}`;echo.removeAttribute('role');echo.removeAttribute('tabindex');echo.removeAttribute('aria-pressed');echo.setAttribute('aria-hidden','true');
+  echo.style.left=`${rect.left-bounds.left}px`;echo.style.top=`${rect.top-bounds.top}px`;echo.style.width=`${rect.width}px`;echo.style.height=`${rect.height}px`;echo.style.gridColumn='auto';echo.style.gridRow='auto';
+  layer.append(echo);card.remove();setTimeout(()=>echo.remove(),760);
+}
+function ensureMobCard(e){
+  const field=document.querySelector('#mobField');if(!field)return null;
   let card=field.querySelector(`[data-enemy="${e.id}"]`);if(!card){card=document.createElement('div');card.className='mob';card.dataset.enemy=e.id;card.tabIndex=0;card.setAttribute('role','button');card.innerHTML=`<div class="tags"></div><img src="${asset(e.image)}" alt=""><strong>${escape(e.name)}</strong><small class="mobRole"></small><div class="castTrack" hidden><i></i></div><div class="mobIdentity"><img class="roleMarker" alt=""><span class="eliteMarker" aria-label="Elite" hidden>✦</span></div><div class="health"><i></i></div>`;field.append(card);seen.add(e.id);}
   card.classList.toggle('entering',e.movement?.state==='entering');
   card.dataset.role=e.elite?'elite':e.role;card.dataset.archetype=e.archetype||e.role;card.style.setProperty('--slot',e.slotId);return card;
