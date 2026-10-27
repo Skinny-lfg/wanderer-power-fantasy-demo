@@ -381,3 +381,10 @@ body.combatActive{height:100vh;height:100svh;overflow:hidden;overscroll-behavior
   .shell.combatActive .choice strong{font-size:15px;margin-bottom:3px}
   .shell.combatActive .choice small{font-size:10px;line-height:1.15}
 }
+
+
+/* Portrait battlefield: enemies enter from above and advance toward the player. */
+@media (orientation:portrait) and (max-width:720px){
+  .shell.combatActive .mob{left:clamp(20%,var(--x),80%);top:var(--y);transition:left .11s linear,top .11s linear}
+  .shell.combatActive .mob.entering{animation:none!important;opacity:1}
+}
