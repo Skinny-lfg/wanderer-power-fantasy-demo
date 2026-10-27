@@ -1,0 +1,224 @@
+:root{color-scheme:dark;font-family:Inter,ui-sans-serif,system-ui,sans-serif;background:#100b16;color:#f7eee5}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 50% -10%,#4b213e 0,transparent 45%),#100b16}.shell{max-width:1280px;margin:auto;padding:20px clamp(12px,3vw,36px)}header{display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid #74536488;padding-bottom:15px}h1,h2,h3,p{margin-top:0}h1{font-family:Georgia,serif;font-size:clamp(28px,4vw,44px);margin:3px 0 0;letter-spacing:.03em}.eyebrow,.prototypeBadge,.overline{font-size:11px;font-weight:800;letter-spacing:.18em;color:#eabf8b}.prototypeBadge{border:1px solid #a6785a;border-radius:99px;padding:8px 12px}.headerActions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}button{font:inherit;cursor:pointer;border:1px solid #e4ad70;background:linear-gradient(#d59a59,#9c5e35);color:#1b0c0e;padding:11px 17px;border-radius:8px;font-weight:800;min-height:44px}button:hover{filter:brightness(1.15)}button:focus-visible{outline:3px solid #fff;outline-offset:3px}.ghost{background:#231b2c;color:#f5decc;border-color:#775b70}.primary{box-shadow:0 0 32px #be71424d}.muted{color:#c7b9c9}.small{font-size:13px}.intro{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch;min-height:65vh;padding-top:28px}.introCopy{padding:clamp(20px,4vw,58px);border:1px solid #664454;border-radius:16px;background:linear-gradient(140deg,#2f1b2fcc,#16121fd9),url('./assets/dungeons/c3/blood_crimson_dominion.webp') center/cover}.introCopy h2{font:clamp(38px,6vw,72px)/.95 Georgia,serif;max-width:620px;margin:12px 0 24px}.introCopy p{font-size:clamp(16px,1.6vw,20px);line-height:1.55;max-width:600px}.builds{display:grid;gap:16px}.buildCard{width:100%;display:flex;align-items:center;gap:20px;text-align:left;background:#271a2f;border-color:#6c4b66;padding:18px}.buildCard img{width:96px;height:110px;object-fit:contain;filter:drop-shadow(0 8px 12px #000)}.buildCard strong{display:block;font:27px Georgia,serif;color:#fff}.buildCard small{display:block;color:#cdbfca;margin-top:9px;line-height:1.5}.buildCard.blood:hover{border-color:#f97986;box-shadow:0 0 30px #ba293850}.buildCard.lightning:hover{border-color:#8dbcfb;box-shadow:0 0 30px #3c75d850}.hud{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;padding:16px 0}.hud h2{margin:2px 0 5px;font:28px Georgia,serif}.encounterDots{display:flex;gap:6px;justify-content:center}.encounterDots span{width:28px;height:6px;background:#5c485e;border-radius:4px}.encounterDots span.done{background:#de9a5f}.encounterDots span.now{background:#fff;box-shadow:0 0 12px #f8c16f}.hudRight{text-align:right}.arena{position:relative;min-height:460px;overflow:hidden;border:1px solid #765467;border-radius:16px;background:linear-gradient(180deg,#150c1e44,#100a18d9),var(--arena) center/cover;box-shadow:inset 0 0 70px #130714,0 16px 44px #0008}.arena:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#160b20bb,transparent 40%),linear-gradient(0deg,#130d1e99,transparent 38%);pointer-events:none}.battlefield{position:relative;display:grid;grid-template-columns:minmax(150px,210px) 1fr;min-height:460px;gap:14px;padding:26px}.hero{display:flex;flex-direction:column;justify-content:end;align-items:center;position:relative;z-index:2}.hero img{height:270px;max-width:100%;object-fit:contain;filter:drop-shadow(0 10px 18px #000)}.hero.attacking img{animation:attack .24s ease}.hero.hurt img{animation:hurt .3s ease}.heroName{font:22px Georgia,serif;text-align:center;text-shadow:0 2px 4px #000}.health{height:11px;border-radius:8px;background:#3b2636;overflow:hidden;border:1px solid #9b6977;width:100%}.health i{display:block;height:100%;background:linear-gradient(90deg,#a83145,#e06875);transition:width .15s}.heroHealth{max-width:190px}.heroHealth i{background:linear-gradient(90deg,#a7384a,#f1787b)}.mobField{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-content:center;gap:12px;position:relative;z-index:2}.mob{position:relative;background:#120b1bc4;border:1px solid #8c60735c;border-radius:11px;min-height:162px;padding:8px;display:flex;flex-direction:column;align-items:center;justify-content:end;transition:opacity .3s,transform .3s}.mob img{height:104px;max-width:100%;object-fit:contain;filter:drop-shadow(0 5px 9px #0009)}.mob strong{font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;text-align:center}.mob .health{height:7px;margin:5px 0}.mob.dead{opacity:.05;transform:scale(.7)}.mob.hit{animation:hit .25s}.mob.burst{box-shadow:0 0 24px #e9485c;border-color:#ff6674}.mob.shock{box-shadow:0 0 26px #90d5ff;border-color:#aadfff}.tags{position:absolute;top:7px;left:7px;display:flex;gap:4px;z-index:1}.tag{font-size:10px;border-radius:5px;padding:2px 5px;background:#832934;color:#fff}.tag.lightning{background:#2d6798}.float{position:absolute;top:23%;left:50%;transform:translateX(-50%);font-weight:900;font-size:23px;text-shadow:0 3px 4px #000;pointer-events:none;animation:float .85s forwards;z-index:5}.float.bleed,.float.crit{color:#ff6675}.float.arc,.float.discharge{color:#a7dcff}.bolt{position:absolute;height:4px;transform-origin:0 50%;background:#aee6ff;box-shadow:0 0 8px #68bbff,0 0 18px #278aff;z-index:8;pointer-events:none;animation:bolt .35s forwards}.bolt.blood{background:#fd596b;box-shadow:0 0 10px #e82b49}.arenaOverlay{position:absolute;inset:0;z-index:12;display:grid;place-items:center;padding:18px;background:#080713b8;backdrop-filter:blur(4px)}.decision{width:min(800px,100%);padding:clamp(18px,3vw,32px);background:linear-gradient(135deg,#30213b,#18131f);border:1px solid #c29677;border-radius:16px;box-shadow:0 20px 70px #000c}.decision h2{font:clamp(30px,5vw,46px) Georgia,serif;margin:8px 0}.choiceGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}.choice{display:block;text-align:left;min-height:145px;background:#281b2e;border:1px solid #aa7880}.choice strong{display:block;font:25px Georgia,serif;margin-bottom:8px}.choice small{font-weight:500;line-height:1.45;display:block;color:#e0d2df}.choice.blood{border-color:#a85664}.choice.lightning{border-color:#6996c2}.below{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:17px}.panel{background:#1b1523;border:1px solid #614656;border-radius:12px;padding:17px}.panel h3{margin-bottom:12px;color:#eac39a;font-size:14px;text-transform:uppercase;letter-spacing:.13em}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.stat strong{display:block;font:26px Georgia,serif;color:#fff}.stat span{font-size:12px;color:#c7b9c9}.log{height:113px;overflow:hidden;font-size:13px;line-height:1.65;color:#dfcbda}.log div:first-child{color:#fff}.result{max-width:930px;margin:28px auto;padding:clamp(24px,5vw,50px);background:linear-gradient(135deg,#301f38,#17101d);border:1px solid #bd8d6d;border-radius:16px}.result h2{font:clamp(38px,6vw,62px) Georgia,serif}.resultHero{height:180px;float:right;max-width:32%;object-fit:contain}.result .stats{margin:22px 0}.result ol{line-height:1.8}.resultActions{display:flex;gap:10px;flex-wrap:wrap}.pauseText{text-align:center;color:#fff}footer{text-align:center;font-size:12px;color:#a996a8;padding:26px 0}@keyframes hit{50%{transform:translateX(6px);filter:brightness(2)}}@keyframes attack{50%{transform:translateX(15px)}}@keyframes hurt{50%{filter:brightness(2)}}@keyframes float{to{opacity:0;top:0}}@keyframes bolt{to{opacity:0}}@media(max-width:720px){.intro{grid-template-columns:1fr;min-height:0}.introCopy{padding:24px}.introCopy h2{font-size:45px}.hud{grid-template-columns:1fr auto}.encounterDots{grid-row:2;grid-column:1/-1;justify-content:start}.arena,.battlefield{min-height:540px}.battlefield{grid-template-columns:1fr;grid-template-rows:150px 1fr;padding:12px}.hero{flex-direction:row;justify-content:start;gap:10px}.hero img{height:145px}.heroName{font-size:18px}.heroHealth{width:100px}.mobField{gap:5px}.mob{min-height:104px;padding:4px}.mob img{height:65px}.mob strong{font-size:10px}.below{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.choiceGrid{grid-template-columns:1fr}.choice{min-height:90px}.prototypeBadge{display:none}}@media(max-width:360px){.shell{padding:12px 8px}.mob img{height:54px}.mob{min-height:93px}.hero img{height:125px}.hud h2{font-size:23px}}
+.heroInfo{display:flex;flex-direction:column;align-items:center;gap:4px;width:100%;text-align:center}.heroInfo .small{white-space:nowrap}
+@media(max-width:720px){.heroInfo{width:auto;min-width:130px;align-items:flex-start;text-align:left}.heroInfo .heroHealth{width:130px}.heroInfo .small{font-size:12px}.hero img{width:145px;flex:none}}
+@media(max-width:360px){.hero img{width:125px}.heroInfo{min-width:110px}.heroInfo .heroHealth{width:110px}}
+.impactVfx{position:absolute;z-index:4;top:50%;left:50%;width:115px!important;height:115px!important;max-width:none!important;object-fit:contain;transform:translate(-50%,-50%);pointer-events:none;animation:impact .39s forwards;filter:drop-shadow(0 0 8px #fff8)}
+@keyframes impact{0%{opacity:0;transform:translate(-50%,-50%) scale(.4)}25%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.25)}}
+@media(max-width:720px){.impactVfx{width:75px!important;height:75px!important}}
+.focusSummary,.commanderSummary{display:block;margin-top:6px;font-size:11px;font-weight:800;letter-spacing:.08em;color:#c9b8cd}.focusSummary.focused{color:#f7c86b}.commanderSummary{color:#ffd474}.commanderSummary[hidden]{display:none}
+.mob{cursor:pointer;touch-action:manipulation;user-select:none;-webkit-tap-highlight-color:transparent;border-width:1px}.mob:focus-visible{outline:2px solid #fff;outline-offset:2px}.mob.focused{border:2px solid #e6b74f;box-shadow:0 0 18px #f6c35c66,inset 0 0 10px #f6c35c22}.mob.elite{border-color:#dfad45;box-shadow:inset 0 0 16px #b8873330}.mob.focused.elite{box-shadow:0 0 20px #f2bf4d88,inset 0 0 16px #b8873340}.mobRole{font-size:9px;letter-spacing:.08em;color:#cdbbd0}.mob.elite .mobRole{color:#ffdb7d;font-weight:900}.castTrack{width:100%;height:5px;border-radius:5px;overflow:hidden;background:#4f2532;border:1px solid #bd4754;margin-top:4px}.castTrack i{display:block;height:100%;background:linear-gradient(90deg,#f3a541,#ff435d);transition:width .12s linear}.tag.shield{background:#45718b}.tag.castTag{background:#9a2638;animation:castPulse .9s infinite alternate}.float.damageTaken{color:#ff7278;font-size:25px}.mobField{grid-auto-rows:minmax(96px,auto)}
+@media(min-width:721px){.mobField{grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.mob{min-height:128px}.mob img{height:76px}}
+@media(max-width:720px){.arena,.battlefield{min-height:660px}.mobField{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:minmax(88px,auto);align-content:start}.mob{min-height:90px;padding:4px}.mob img{height:54px}.mob strong{font-size:10px}.mobRole{font-size:8px}.castTrack{height:4px;margin-top:2px}.tags{top:4px;left:4px;gap:2px}.tag{font-size:8px;padding:1px 3px}.focusSummary,.commanderSummary{font-size:9px}}
+@keyframes castPulse{to{filter:brightness(1.6)}}
+
+/* v2.2: stable combat viewport, anchored enemy slots and readable death beats. */
+body.combatActive{height:100vh;height:100svh;overflow:hidden;overscroll-behavior:none}
+.shell.combatActive{height:100vh;height:100svh;min-height:0;display:flex;flex-direction:column;overflow:hidden;padding-top:max(env(safe-area-inset-top),6px);padding-bottom:max(env(safe-area-inset-bottom),4px)}
+.shell.combatActive>header{flex:0 0 auto;min-height:48px;padding-bottom:7px}
+.shell.combatActive #app{flex:1 1 auto;min-height:0;overflow:hidden;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:5px}
+.shell.combatActive footer{display:none}
+.shell.combatActive .hud{padding:5px 0;gap:8px;min-height:0}
+.shell.combatActive .hud h2{font-size:clamp(19px,2.2vw,26px);margin:1px 0 3px}
+.shell.combatActive .arena,.shell.combatActive .battlefield{height:100%;min-height:0}
+.shell.combatActive .battlefield{grid-template-rows:minmax(70px,20%) minmax(0,1fr);padding:10px;gap:8px}
+.shell.combatActive .mobField{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(6,minmax(0,1fr));grid-auto-flow:row;align-content:stretch;gap:6px;min-height:0}
+.shell.combatActive .mob{min-height:0;height:auto;padding:4px;justify-content:center;overflow:hidden}
+.shell.combatActive .mob img{height:clamp(36px,6svh,68px);max-height:68px}
+.shell.combatActive .mob strong{font-size:clamp(9px,.9vw,12px)}
+.shell.combatActive .mob .health{margin:3px 0}
+.shell.combatActive .below{grid-template-columns:1fr 1fr;gap:6px;margin:0;min-height:30px;max-height:118px;overflow:hidden}
+.shell.combatActive .below details.panel{min-width:0;min-height:30px;max-height:30px;overflow:hidden;padding:5px 9px}
+.shell.combatActive .below details.panel[open]{max-height:112px;overflow:auto;overscroll-behavior:contain}
+.shell.combatActive .below summary{cursor:pointer;list-style:none}
+.shell.combatActive .below summary::-webkit-details-marker{display:none}
+.shell.combatActive .below summary h3{font-size:10px;margin:0;letter-spacing:.08em}
+.shell.combatActive .below .stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;margin-top:6px}
+.shell.combatActive .below .stat strong{font-size:17px}
+.shell.combatActive .below .stat span{font-size:10px}
+.shell.combatActive .log{height:auto;max-height:76px;overflow:auto}
+.shell.combatActive .arenaOverlay{padding:8px}
+.shell.combatActive .decision{max-height:100%;overflow:auto;overscroll-behavior:contain}
+.shell.combatActive .choiceGrid{gap:7px;margin-top:10px}
+.shell.combatActive .choice{min-height:80px;padding:10px}
+.shell.combatActive .choice strong{font-size:20px;margin-bottom:4px}
+.deathLayer{position:absolute;inset:0;z-index:9;overflow:hidden;pointer-events:none}
+.mob.deathEcho{position:absolute;z-index:1;min-height:0;margin:0;pointer-events:none;animation:mobDeath .76s cubic-bezier(.15,.7,.25,1) forwards;box-shadow:0 0 24px #ff586b99,inset 0 0 22px #ff586b66}
+@keyframes mobDeath{0%{opacity:1;filter:brightness(1.8) saturate(1.35);transform:scale(.96)}18%{opacity:.94;filter:brightness(1.45) saturate(1.2)}100%{opacity:0;filter:grayscale(.65);transform:translateY(-7px) scale(.68)}}
+.mob.focused{border:3px solid #ffd45c;box-shadow:0 0 0 2px #493208,0 0 26px #ffd45c99,inset 0 0 14px #ffd45c33}
+.mob.focused:after{content:'FOCUS';position:absolute;right:4px;bottom:3px;padding:1px 4px;border-radius:4px;background:#f6c850;color:#251800;font-size:8px;font-weight:1000;letter-spacing:.08em;z-index:4}
+.secondaryPulse{animation:secondaryPulse .25s ease-out}
+.secondaryPulse.arc{box-shadow:inset 0 0 22px #7ec9ff88}
+.secondaryPulse.discharge{box-shadow:inset 0 0 22px #b9eaff99}
+@keyframes secondaryPulse{50%{filter:brightness(1.38)}}
+.float{opacity:.9;text-shadow:0 2px 3px #000}
+.float.bleed{opacity:.68;font-size:17px}
+.float.arc,.float.discharge{opacity:.74;font-size:17px}
+.float.crit{z-index:7;font-size:22px;color:#ffe08a}
+.bolt{opacity:.82;box-shadow:0 0 5px #68bbff,0 0 10px #278aff}
+.bolt.blood{box-shadow:0 0 6px #e82b49}
+.impactVfx{opacity:.72;filter:drop-shadow(0 0 4px #fff7)}
+@media(max-width:720px){
+  .shell.combatActive{padding-left:max(8px,env(safe-area-inset-left));padding-right:max(8px,env(safe-area-inset-right))}
+  .shell.combatActive>header{min-height:43px;gap:5px;padding-bottom:5px}
+  .shell.combatActive header h1{font-size:24px}
+  .shell.combatActive .prototypeBadge{display:block;font-size:8px;padding:5px 7px;letter-spacing:.08em}
+  .shell.combatActive .headerActions{gap:4px}
+  .shell.combatActive .headerActions button{min-height:36px;padding:6px 9px;font-size:12px}
+  .shell.combatActive .hud{grid-template-columns:minmax(0,1fr) auto;gap:5px;padding:3px 0}
+  .shell.combatActive .hud h2{font-size:19px}
+  .shell.combatActive .hud .encounterDots{display:none}
+  .shell.combatActive .hudRight{font-size:12px}
+  .shell.combatActive .hudRight #timer{font-size:14px}
+  .shell.combatActive .hudRight #buildChoices{display:none}
+  .shell.combatActive .overline{font-size:8px;letter-spacing:.1em}
+  .shell.combatActive #counter,.shell.combatActive .focusSummary,.shell.combatActive .commanderSummary{font-size:9px;line-height:1.2;margin-top:2px}
+  .shell.combatActive .arena{border-radius:10px}
+  .shell.combatActive .battlefield{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(48px,11%) minmax(0,1fr);padding:5px;gap:3px}
+  .shell.combatActive .hero{flex-direction:row;justify-content:center;gap:7px}
+  .shell.combatActive .hero img{height:clamp(38px,7svh,58px);width:56px;flex:none}
+  .shell.combatActive .heroInfo{width:auto;min-width:125px;align-items:flex-start;text-align:left;gap:2px}
+  .shell.combatActive .heroName{font-size:14px}
+  .shell.combatActive .heroHealth{width:min(42vw,150px)}
+  .shell.combatActive #heroHpText{font-size:9px}
+  .shell.combatActive .mobField{gap:3px}
+  .shell.combatActive .mob{padding:2px;border-radius:6px}
+  .shell.combatActive .mob img{height:clamp(24px,4.8svh,42px);max-height:42px}
+  .shell.combatActive .mob strong{font-size:clamp(8px,2.1vw,10px);line-height:1.05;max-width:100%}
+  .shell.combatActive .mobRole{font-size:7px;line-height:1.05}
+  .shell.combatActive .mob .health{height:4px;margin:2px 0}
+  .shell.combatActive .tags{top:2px;left:2px;gap:1px}
+  .shell.combatActive .tag{font-size:7px;padding:0 2px}
+  .shell.combatActive .castTrack{height:3px;margin-top:1px}
+  .shell.combatActive .below{gap:4px;max-height:98px}
+  .shell.combatActive .below details.panel{min-height:27px;max-height:27px;padding:4px 6px;border-radius:7px}
+  .shell.combatActive .below details.panel[open]{max-height:94px}
+  .shell.combatActive .below summary h3{font-size:9px}
+  .shell.combatActive .below .stat strong{font-size:14px}
+  .shell.combatActive .below .stat span{font-size:8px}
+  .shell.combatActive .log{font-size:10px;line-height:1.35;max-height:68px}
+  .shell.combatActive .decision{padding:12px}
+  .shell.combatActive .decision h2{font-size:27px}
+  .shell.combatActive .choice{min-height:68px}
+  .shell.combatActive .choice strong{font-size:18px}
+  .shell.combatActive .choice small{font-size:11px;line-height:1.25}
+  .float{font-size:16px}
+  .float.crit{font-size:19px}
+  .impactVfx{width:56px!important;height:56px!important}
+}
+@media(max-height:650px){
+  .shell.combatActive>header{min-height:38px}
+  .shell.combatActive .battlefield{grid-template-rows:minmax(38px,9%) minmax(0,1fr)}
+  .shell.combatActive .hero img{height:34px}
+  .shell.combatActive .mob img{height:24px}
+  .shell.combatActive .below details.panel[open]{max-height:72px}
+}
+
+/* v2.3: battle stage — the battlefield is a scene, not a grid of enemy panels. */
+.shell.combatActive .battlefield{position:absolute;inset:0;display:block;padding:0;overflow:hidden;background:linear-gradient(0deg,#10081799,transparent 34%);}
+.shell.combatActive .hero{position:absolute;left:6%;bottom:5%;width:22%;height:76%;display:flex;align-items:center;justify-content:flex-end;z-index:4;pointer-events:none;}
+.shell.combatActive .hero img{height:min(76%,440px);width:auto;max-width:100%;object-fit:contain;filter:drop-shadow(0 15px 18px #07040be0) drop-shadow(0 0 12px #ca8c6940);}
+.shell.combatActive .heroInfo{position:absolute;bottom:0;left:0;width:100%;align-items:center;gap:4px;padding:5px 8px;border-radius:9px;background:linear-gradient(0deg,#110918d9,#1109189c 72%,transparent);}
+.shell.combatActive .heroName{font-size:15px;text-shadow:0 2px 8px #000;}
+.shell.combatActive .heroHealth{width:74%;height:7px;max-width:190px;}
+.shell.combatActive #heroHpText{font-size:10px;text-shadow:0 1px 4px #000;}
+.shell.combatActive .mobField{position:absolute;inset:0;display:block;z-index:3;pointer-events:none;}
+.shell.combatActive .mob{position:absolute;left:var(--x);top:var(--y);width:clamp(88px,8.5vw,124px);height:clamp(106px,15vh,158px);min-height:0;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;transform:translate(-50%,-50%);pointer-events:auto;isolation:isolate;}
+.shell.combatActive .mob:before{content:'';position:absolute;z-index:-1;inset:13% 3% 2%;border-radius:50%;background:radial-gradient(ellipse,#09050bcc 0,transparent 71%);opacity:.75;transform:scale(.72,.35);}
+.shell.combatActive .mob img{width:auto;height:76%;max-width:100%;max-height:none;object-fit:contain;filter:drop-shadow(0 9px 8px #050307d9) drop-shadow(0 0 7px #b59a9a44);transition:filter .16s,transform .16s;}
+.shell.combatActive .mob[data-role="tank"]{z-index:5;}
+.shell.combatActive .mob[data-role="tank"] img{height:82%;filter:drop-shadow(0 10px 9px #050307e8) drop-shadow(0 0 9px #b8adb04f);}
+.shell.combatActive .mob[data-role="skirmisher"]{z-index:4;}
+.shell.combatActive .mob[data-role="caster"]{z-index:2;}
+.shell.combatActive .mob[data-role="caster"] img{height:70%;filter:drop-shadow(0 8px 8px #050307d9) drop-shadow(0 0 12px #77baf455);}
+.shell.combatActive .mob.elite{z-index:6;width:clamp(126px,12vw,168px);height:clamp(144px,20vh,198px);}
+.shell.combatActive .mob.elite img{height:84%;filter:drop-shadow(0 12px 12px #020103ed) drop-shadow(0 0 18px #f5b6489a);}
+.shell.combatActive .mob strong,.shell.combatActive .mobRole{display:none;}
+.shell.combatActive .mob.focused strong,.shell.combatActive .mob.casting strong,.shell.combatActive .mob.elite strong{display:block;position:absolute;bottom:-14px;max-width:130%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center;font:700 10px/1.1 Inter,ui-sans-serif,sans-serif;color:#fff1d8;text-shadow:0 2px 5px #000;}
+.shell.combatActive .mob .health{position:absolute;bottom:0;width:58%;height:5px;margin:0;border:1px solid #dfb4a0a8;background:#160d18e8;box-shadow:0 2px 4px #000;}
+.shell.combatActive .mob.focused .health,.shell.combatActive .mob.casting .health,.shell.combatActive .mob.elite .health{bottom:-12px;}
+.shell.combatActive .mob .castTrack{position:absolute;bottom:-7px;width:68%;height:4px;margin:0;z-index:4;box-shadow:0 2px 4px #000;}
+.shell.combatActive .mob .tags{top:8%;left:50%;transform:translateX(-50%);justify-content:center;width:100%;}
+.shell.combatActive .mob .tag{font-size:8px;padding:2px 5px;background:#592a32e8;box-shadow:0 2px 6px #0009;}
+.shell.combatActive .mob.focused{border:0;box-shadow:none;}
+.shell.combatActive .mob.focused:after{content:'';position:absolute;left:50%;top:11%;width:69%;height:69%;transform:translateX(-50%);border:2px solid #ffd45c;border-radius:48% 48% 42% 42%;background:radial-gradient(ellipse at center,transparent 48%,#ffd45c18 75%,transparent 78%);box-shadow:0 0 0 1px #241708,0 0 16px #ffd45cba;pointer-events:none;z-index:-1;}
+.shell.combatActive .mob.focused img{filter:drop-shadow(0 0 9px #ffd45c) drop-shadow(0 0 17px #ffd45c99);transform:scale(1.05);}
+.shell.combatActive .mob.elite:before{background:radial-gradient(ellipse,#a9701b7a 0,transparent 72%);}
+.shell.combatActive .mob.casting img{filter:drop-shadow(0 0 10px #ff5164) drop-shadow(0 0 18px #ff516488);}
+.priorityTargets{position:absolute;z-index:10;top:10px;right:12px;display:flex;gap:6px;max-width:52%;padding:4px 6px;border:1px solid #dfbd7d55;border-radius:10px;background:linear-gradient(100deg,#120b19c9,#211420a8);backdrop-filter:blur(5px);}
+.priorityTargets[hidden]{display:none;}
+.priorityTarget{min-width:64px;min-height:42px;height:42px;padding:3px 7px;display:flex;align-items:center;gap:5px;border:1px solid #9b7a614c;border-radius:8px;background:#160e1cd9;color:#f5e6d5;font-size:9px;line-height:1;box-shadow:0 3px 7px #0008;}
+.priorityTarget img{width:30px;height:34px;object-fit:contain;filter:drop-shadow(0 2px 3px #000);}
+.priorityTarget span{max-width:62px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.priorityTarget.casting{border-color:#fa6878;color:#ffd7dc;box-shadow:0 0 10px #ed49634f;}
+.priorityTarget.elite{border-color:#dfb54e;color:#ffe39b;}
+.priorityTarget.focused{outline:2px solid #ffd45c;outline-offset:1px;}
+.priorityTargets:before{content:'THREATS';align-self:center;padding:0 4px;color:#cbbab0;font-size:8px;font-weight:900;letter-spacing:.13em;}
+.shell.combatActive .arena:before{z-index:1;background:linear-gradient(90deg,#160b2070,transparent 26%,transparent 75%,#160b2060),linear-gradient(0deg,#130d1eac 0,transparent 28%,#130d1e50 100%);}
+.shell.combatActive .bolt{height:3px;z-index:9;opacity:.9;filter:drop-shadow(0 0 5px #8ee2ff);}
+.shell.combatActive .bolt.blood{height:4px;filter:drop-shadow(0 0 5px #ff334d);}
+.shell.combatActive .deathLayer{z-index:7;}
+.shell.combatActive .mob.deathEcho{border:0;background:transparent;box-shadow:none;}
+.shell.combatActive .mob.deathEcho:before{content:'';position:absolute;inset:30% 22% 8%;border-radius:50%;background:#ef58684c;filter:blur(14px);}
+.shell.combatActive .mob.hit{animation:entityHit .24s ease;}
+@keyframes entityHit{50%{filter:brightness(1.55) saturate(1.2);}}
+@media(min-width:721px){
+  .shell.combatActive .battlefield{background:radial-gradient(ellipse at 18% 100%,#3921344f,transparent 43%),linear-gradient(180deg,transparent 70%,#08050cc9);}
+  .shell.combatActive .hero{left:5%;width:24%;height:78%;}
+  .shell.combatActive .mob[data-role="tank"]{transform:translate(-50%,-50%) scale(1.08);}
+  .shell.combatActive .mob[data-role="skirmisher"]{transform:translate(-50%,-50%) scale(.94);}
+  .shell.combatActive .mob[data-role="caster"]{transform:translate(-50%,-50%) scale(.84);}
+  .shell.combatActive .mobField{perspective:700px;}
+}
+@media(max-width:720px){
+  .shell.combatActive #app{grid-template-rows:auto minmax(0,1fr) auto;gap:3px;}
+  .shell.combatActive>header{min-height:38px;padding-bottom:3px;}
+  .shell.combatActive header h1{font-size:20px;}
+  .shell.combatActive .prototypeBadge{padding:3px 6px;font-size:7px;}
+  .shell.combatActive .hud{padding:1px 0;}
+  .shell.combatActive .hud h2{font-size:16px;}
+  .shell.combatActive .arena:before{background:linear-gradient(180deg,#10081766,transparent 22%,transparent 70%,#110817aa);}
+  .shell.combatActive .battlefield{background:radial-gradient(ellipse at 50% 96%,#43254066,transparent 48%),linear-gradient(180deg,#08050a44,transparent 44%,#08050ac9);}
+  .shell.combatActive .hero{left:50%;bottom:1.5%;width:36%;height:24%;transform:translateX(-50%);justify-content:flex-end;}
+  .shell.combatActive .hero img{height:78%;width:auto;max-width:100%;filter:drop-shadow(0 9px 10px #050307e8) drop-shadow(0 0 12px #e4956d4d);}
+  .shell.combatActive .heroInfo{bottom:-1px;width:145%;left:50%;transform:translateX(-50%);padding:3px 6px;gap:2px;}
+  .shell.combatActive .heroName{font-size:12px;}
+  .shell.combatActive .heroHealth{width:84%;height:5px;}
+  .shell.combatActive #heroHpText{font-size:8px;}
+  .shell.combatActive .mob{width:min(23vw,100px);height:clamp(94px,17vh,132px);}
+  .shell.combatActive .mob img{height:76%;}
+  .shell.combatActive .mob[data-role="tank"] img{height:83%;}
+  .shell.combatActive .mob[data-role="caster"] img{height:70%;}
+  .shell.combatActive .mob.elite{width:min(31vw,132px);height:clamp(132px,23vh,168px);}
+  .shell.combatActive .mob .health{width:67%;height:4px;}
+  .shell.combatActive .mob.focused .health,.shell.combatActive .mob.casting .health,.shell.combatActive .mob.elite .health{bottom:-11px;}
+  .shell.combatActive .mob .castTrack{bottom:-6px;}
+  .shell.combatActive .mob.focused strong,.shell.combatActive .mob.casting strong,.shell.combatActive .mob.elite strong{font-size:8px;bottom:-13px;}
+  .shell.combatActive .priorityTargets{top:5px;left:5px;right:auto;max-width:calc(100% - 10px);gap:3px;padding:3px 4px;border-radius:8px;}
+  .shell.combatActive .priorityTargets:before{font-size:7px;padding:0 2px;}
+  .shell.combatActive .priorityTarget{min-width:46px;height:34px;min-height:34px;gap:2px;padding:2px 4px;font-size:8px;border-radius:6px;}
+  .shell.combatActive .priorityTarget img{width:23px;height:28px;}
+  .shell.combatActive .priorityTarget span{max-width:41px;}
+  .shell.combatActive .below{max-height:53px;}
+  .shell.combatActive .below details.panel{min-height:25px;max-height:25px;}
+  .shell.combatActive .below details.panel[open]{max-height:52px;}
+  .shell.combatActive .below .stats{display:none;}
+  .shell.combatActive .below .log{font-size:9px;max-height:25px;overflow:auto;}
+  .shell.combatActive .mob.focused:after{width:72%;height:73%;border-width:2px;}
+}
+@media(max-height:680px){
+  .shell.combatActive .mob{height:clamp(82px,15vh,112px);}
+  .shell.combatActive .mob.elite{height:clamp(116px,20vh,148px);}
+  .shell.combatActive .hero{height:22%;}
+}
+@keyframes battlefieldArrival{0%{opacity:0;translate:72px 0}100%{opacity:1;translate:0 0}}
+.shell.combatActive .mob.entering{animation:battlefieldArrival .44s cubic-bezier(.17,.72,.28,1) both;}
+@media(max-width:720px){
+  @keyframes battlefieldArrival{0%{opacity:0;translate:0 -38px}100%{opacity:1;translate:0 0}}
+  .shell.combatActive>header{gap:6px;}
+  .shell.combatActive>header .eyebrow{display:none;}
+  .shell.combatActive>header h1{font-size:18px;white-space:nowrap;}
+  .shell.combatActive .headerActions{flex-wrap:nowrap;gap:3px;}
+  .shell.combatActive .prototypeBadge{font-size:6px;letter-spacing:.035em;padding:3px 4px;white-space:nowrap;}
+  .shell.combatActive .headerActions button{min-height:28px;padding:3px 5px;font-size:9px;white-space:nowrap;}
+}
