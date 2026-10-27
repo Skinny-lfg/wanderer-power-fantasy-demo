@@ -50,9 +50,10 @@ function spawn(r,role=roleFor(r,r.spawned)) {
   const [baseName,image]=MOB_ART[kind],elite=role==='commander';
   const hpScale=role==='tank'?1.72:role==='skirmisher'?.72:elite?2.65:role==='caster'?.90:1;
   const maxhp=Math.round((cfg.hp+(r.spawned%4)*3)*hpScale),attackEvery=role==='skirmisher'?3.2:role==='tank'?5.8:elite?5.3:4.6;
+  const occupied=new Set(r.enemies.map(e=>e.slotId));let slotId=0;while(occupied.has(slotId))slotId++;
   const e={id:r.nextId++,name:elite?'Elite Commander':baseName,image,role,elite,hp:maxhp,maxhp,defense:role==='tank'?3:elite?2:0,
     bleed:0,bleedTime:0,bleedClock:0,charge:0,barrier:0,barrierTime:0,attackClock:random(r)*attackEvery,
-    attackEvery,guardClock:random(r)*1.5,castDuration:3,castProgress:0,casting:false,attackDamage:role==='skirmisher'?1.15:role==='tank'?3.2:elite?3.8:role==='caster'?7.5:4};
+    attackEvery,guardClock:random(r)*1.5,castDuration:3,castProgress:0,casting:false,slotId,attackDamage:role==='skirmisher'?1.15:role==='tank'?3.2:elite?3.8:role==='caster'?7.5:4};
   if(elite){r.commanderAlive=true;emit(r,'commanderBuffStart',{target:e.id});}
   r.enemies.push(e);r.spawned++;emit(r,'spawn',{target:e.id,role:e.role,elite:e.elite});
 }

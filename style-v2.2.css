@@ -12,3 +12,105 @@
 @media(min-width:721px){.mobField{grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.mob{min-height:128px}.mob img{height:76px}}
 @media(max-width:720px){.arena,.battlefield{min-height:660px}.mobField{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:minmax(88px,auto);align-content:start}.mob{min-height:90px;padding:4px}.mob img{height:54px}.mob strong{font-size:10px}.mobRole{font-size:8px}.castTrack{height:4px;margin-top:2px}.tags{top:4px;left:4px;gap:2px}.tag{font-size:8px;padding:1px 3px}.focusSummary,.commanderSummary{font-size:9px}}
 @keyframes castPulse{to{filter:brightness(1.6)}}
+
+/* v2.2: stable combat viewport, anchored enemy slots and readable death beats. */
+body.combatActive{height:100vh;height:100svh;overflow:hidden;overscroll-behavior:none}
+.shell.combatActive{height:100vh;height:100svh;min-height:0;display:flex;flex-direction:column;overflow:hidden;padding-top:max(env(safe-area-inset-top),6px);padding-bottom:max(env(safe-area-inset-bottom),4px)}
+.shell.combatActive>header{flex:0 0 auto;min-height:48px;padding-bottom:7px}
+.shell.combatActive #app{flex:1 1 auto;min-height:0;overflow:hidden;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:5px}
+.shell.combatActive footer{display:none}
+.shell.combatActive .hud{padding:5px 0;gap:8px;min-height:0}
+.shell.combatActive .hud h2{font-size:clamp(19px,2.2vw,26px);margin:1px 0 3px}
+.shell.combatActive .arena,.shell.combatActive .battlefield{height:100%;min-height:0}
+.shell.combatActive .battlefield{grid-template-rows:minmax(70px,20%) minmax(0,1fr);padding:10px;gap:8px}
+.shell.combatActive .mobField{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(6,minmax(0,1fr));grid-auto-flow:row;align-content:stretch;gap:6px;min-height:0}
+.shell.combatActive .mob{min-height:0;height:auto;padding:4px;justify-content:center;overflow:hidden}
+.shell.combatActive .mob img{height:clamp(36px,6svh,68px);max-height:68px}
+.shell.combatActive .mob strong{font-size:clamp(9px,.9vw,12px)}
+.shell.combatActive .mob .health{margin:3px 0}
+.shell.combatActive .below{grid-template-columns:1fr 1fr;gap:6px;margin:0;min-height:30px;max-height:118px;overflow:hidden}
+.shell.combatActive .below details.panel{min-width:0;min-height:30px;max-height:30px;overflow:hidden;padding:5px 9px}
+.shell.combatActive .below details.panel[open]{max-height:112px;overflow:auto;overscroll-behavior:contain}
+.shell.combatActive .below summary{cursor:pointer;list-style:none}
+.shell.combatActive .below summary::-webkit-details-marker{display:none}
+.shell.combatActive .below summary h3{font-size:10px;margin:0;letter-spacing:.08em}
+.shell.combatActive .below .stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;margin-top:6px}
+.shell.combatActive .below .stat strong{font-size:17px}
+.shell.combatActive .below .stat span{font-size:10px}
+.shell.combatActive .log{height:auto;max-height:76px;overflow:auto}
+.shell.combatActive .arenaOverlay{padding:8px}
+.shell.combatActive .decision{max-height:100%;overflow:auto;overscroll-behavior:contain}
+.shell.combatActive .choiceGrid{gap:7px;margin-top:10px}
+.shell.combatActive .choice{min-height:80px;padding:10px}
+.shell.combatActive .choice strong{font-size:20px;margin-bottom:4px}
+.deathLayer{position:absolute;inset:0;z-index:9;overflow:hidden;pointer-events:none}
+.mob.deathEcho{position:absolute;z-index:1;min-height:0;margin:0;pointer-events:none;animation:mobDeath .76s cubic-bezier(.15,.7,.25,1) forwards;box-shadow:0 0 24px #ff586b99,inset 0 0 22px #ff586b66}
+@keyframes mobDeath{0%{opacity:1;filter:brightness(1.8) saturate(1.35);transform:scale(.96)}18%{opacity:.94;filter:brightness(1.45) saturate(1.2)}100%{opacity:0;filter:grayscale(.65);transform:translateY(-7px) scale(.68)}}
+.mob.focused{border:3px solid #ffd45c;box-shadow:0 0 0 2px #493208,0 0 26px #ffd45c99,inset 0 0 14px #ffd45c33}
+.mob.focused:after{content:'FOCUS';position:absolute;right:4px;bottom:3px;padding:1px 4px;border-radius:4px;background:#f6c850;color:#251800;font-size:8px;font-weight:1000;letter-spacing:.08em;z-index:4}
+.secondaryPulse{animation:secondaryPulse .25s ease-out}
+.secondaryPulse.arc{box-shadow:inset 0 0 22px #7ec9ff88}
+.secondaryPulse.discharge{box-shadow:inset 0 0 22px #b9eaff99}
+@keyframes secondaryPulse{50%{filter:brightness(1.38)}}
+.float{opacity:.9;text-shadow:0 2px 3px #000}
+.float.bleed{opacity:.68;font-size:17px}
+.float.arc,.float.discharge{opacity:.74;font-size:17px}
+.float.crit{z-index:7;font-size:22px;color:#ffe08a}
+.bolt{opacity:.82;box-shadow:0 0 5px #68bbff,0 0 10px #278aff}
+.bolt.blood{box-shadow:0 0 6px #e82b49}
+.impactVfx{opacity:.72;filter:drop-shadow(0 0 4px #fff7)}
+@media(max-width:720px){
+  .shell.combatActive{padding-left:max(8px,env(safe-area-inset-left));padding-right:max(8px,env(safe-area-inset-right))}
+  .shell.combatActive>header{min-height:43px;gap:5px;padding-bottom:5px}
+  .shell.combatActive header h1{font-size:24px}
+  .shell.combatActive .prototypeBadge{display:block;font-size:8px;padding:5px 7px;letter-spacing:.08em}
+  .shell.combatActive .headerActions{gap:4px}
+  .shell.combatActive .headerActions button{min-height:36px;padding:6px 9px;font-size:12px}
+  .shell.combatActive .hud{grid-template-columns:minmax(0,1fr) auto;gap:5px;padding:3px 0}
+  .shell.combatActive .hud h2{font-size:19px}
+  .shell.combatActive .hud .encounterDots{display:none}
+  .shell.combatActive .hudRight{font-size:12px}
+  .shell.combatActive .hudRight #timer{font-size:14px}
+  .shell.combatActive .hudRight #buildChoices{display:none}
+  .shell.combatActive .overline{font-size:8px;letter-spacing:.1em}
+  .shell.combatActive #counter,.shell.combatActive .focusSummary,.shell.combatActive .commanderSummary{font-size:9px;line-height:1.2;margin-top:2px}
+  .shell.combatActive .arena{border-radius:10px}
+  .shell.combatActive .battlefield{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(48px,11%) minmax(0,1fr);padding:5px;gap:3px}
+  .shell.combatActive .hero{flex-direction:row;justify-content:center;gap:7px}
+  .shell.combatActive .hero img{height:clamp(38px,7svh,58px);width:56px;flex:none}
+  .shell.combatActive .heroInfo{width:auto;min-width:125px;align-items:flex-start;text-align:left;gap:2px}
+  .shell.combatActive .heroName{font-size:14px}
+  .shell.combatActive .heroHealth{width:min(42vw,150px)}
+  .shell.combatActive #heroHpText{font-size:9px}
+  .shell.combatActive .mobField{gap:3px}
+  .shell.combatActive .mob{padding:2px;border-radius:6px}
+  .shell.combatActive .mob img{height:clamp(24px,4.8svh,42px);max-height:42px}
+  .shell.combatActive .mob strong{font-size:clamp(8px,2.1vw,10px);line-height:1.05;max-width:100%}
+  .shell.combatActive .mobRole{font-size:7px;line-height:1.05}
+  .shell.combatActive .mob .health{height:4px;margin:2px 0}
+  .shell.combatActive .tags{top:2px;left:2px;gap:1px}
+  .shell.combatActive .tag{font-size:7px;padding:0 2px}
+  .shell.combatActive .castTrack{height:3px;margin-top:1px}
+  .shell.combatActive .below{gap:4px;max-height:98px}
+  .shell.combatActive .below details.panel{min-height:27px;max-height:27px;padding:4px 6px;border-radius:7px}
+  .shell.combatActive .below details.panel[open]{max-height:94px}
+  .shell.combatActive .below summary h3{font-size:9px}
+  .shell.combatActive .below .stat strong{font-size:14px}
+  .shell.combatActive .below .stat span{font-size:8px}
+  .shell.combatActive .log{font-size:10px;line-height:1.35;max-height:68px}
+  .shell.combatActive .decision{padding:12px}
+  .shell.combatActive .decision h2{font-size:27px}
+  .shell.combatActive .choice{min-height:68px}
+  .shell.combatActive .choice strong{font-size:18px}
+  .shell.combatActive .choice small{font-size:11px;line-height:1.25}
+  .float{font-size:16px}
+  .float.crit{font-size:19px}
+  .impactVfx{width:56px!important;height:56px!important}
+}
+@media(max-height:650px){
+  .shell.combatActive>header{min-height:38px}
+  .shell.combatActive .battlefield{grid-template-rows:minmax(38px,9%) minmax(0,1fr)}
+  .shell.combatActive .hero img{height:34px}
+  .shell.combatActive .mob img{height:24px}
+  .shell.combatActive .below details.panel[open]{max-height:72px}
+}
